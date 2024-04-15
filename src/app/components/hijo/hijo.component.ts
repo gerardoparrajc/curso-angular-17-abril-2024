@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -10,4 +10,10 @@ import { Component, Input } from '@angular/core';
 export class HijoComponent {
   @Input() nombre: string = '';
   @Input() apellidos: string = '';
+
+  @Output() grito: EventEmitter<string> = new EventEmitter();
+
+  gritar() {
+    this.grito.emit(`${this.nombre} ${this.apellidos}`);
+  }
 }

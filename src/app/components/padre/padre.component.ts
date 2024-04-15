@@ -11,4 +11,8 @@ import { HijoComponent } from '../hijo/hijo.component';
 export class PadreComponent {
   nombrePadre: string = 'Íñigo';
   apellidosPadre: string = 'Montoya';
+
+  manejarGrito(event: string) {
+    alert(event);
+  }
 }
