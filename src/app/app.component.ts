@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MiSegundoComponenteComponent } from './components/mi-segundo-componente/mi-segundo-componente.component';
+import { PadreComponent } from './components/padre/padre.component';
 
 @Component({
   selector: 'kit-raiz',
   standalone: true,
-  imports: [RouterOutlet, MiSegundoComponenteComponent],
+  imports: [RouterOutlet, PadreComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
