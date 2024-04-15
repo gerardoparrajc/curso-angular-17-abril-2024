@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MiPrimerComponenteComponent } from './components/mi-primer-componente/mi-primer-componente.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'kit-raiz',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MiPrimerComponenteComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'mi-primer-proyecto';
+  title = 'Hola mundo';
 }
