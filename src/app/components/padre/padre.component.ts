@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { HijoComponent } from '../hijo/hijo.component';
+import { Hijo2Component } from '../hijo-2/hijo-2.component';
 
 @Component({
   selector: 'app-padre',
   standalone: true,
-  imports: [HijoComponent],
+  imports: [HijoComponent, Hijo2Component],
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.scss'
 })
 export class PadreComponent {
-  nombrePadre: string = 'Íñigo';
-  apellidosPadre: string = 'Montoya';
+  nombreRecibidoDeHijo1: string = '';
 
-  manejarGrito(event: string) {
-    alert(event);
+  manejadorEmisor(nombre: string) {
+    this.nombreRecibidoDeHijo1 = nombre;
   }
 }

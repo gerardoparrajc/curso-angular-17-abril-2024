@@ -1,19 +1,19 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-hijo',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './hijo.component.html',
   styleUrl: './hijo.component.scss'
 })
 export class HijoComponent {
-  @Input() nombre: string = '';
-  @Input() apellidos: string = '';
+  @Output() emisor: EventEmitter<string> = new EventEmitter();
 
-  @Output() grito: EventEmitter<string> = new EventEmitter();
+  nombre: string = 'Nombre inicial';
 
-  gritar() {
-    this.grito.emit(`${this.nombre} ${this.apellidos}`);
+  enviarNombre() {
+    this.emisor.emit(this.nombre);
   }
 }

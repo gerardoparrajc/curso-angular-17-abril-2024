@@ -1,3 +1,9 @@
-<p>Mi nombre es {{ nombre }} {{ apellidos}}. Vos matásteis a mi padre. Preparaos para morir</p>
+<div class="entradaNombre">
+  <input type="text" [(ngModel)]="nombre">
+  {{ nombre }}
+</div>
 
-<button (click)="gritar()">Gritar</button>
+<div class="accion">
+  <button (click)="enviarNombre()">Enviar nombre al Hijo 2</button>
+</div>
+<br />
