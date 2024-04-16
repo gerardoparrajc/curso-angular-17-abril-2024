@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { HijoComponent } from '../hijo/hijo.component';
-import { Hijo2Component } from '../hijo-2/hijo-2.component';
+import { HijosModule } from '../hijos/hijos.module';
 
 @Component({
   selector: 'app-padre',
   standalone: true,
-  imports: [HijoComponent, Hijo2Component],
+  imports: [HijosModule],
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.scss'
 })

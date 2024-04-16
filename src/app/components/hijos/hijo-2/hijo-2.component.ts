@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hijo-2',
-  standalone: true,
-  imports: [],
+  standalone: false,
+  // imports: [],
   templateUrl: './hijo-2.component.html',
   styleUrl: './hijo-2.component.scss'
 })
