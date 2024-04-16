@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MiPrimerServicioService } from '../../services/mi-primer-servicio.service';
 
 @Component({
   selector: 'app-mi-primer-componente',
@@ -11,7 +12,12 @@ import { FormsModule } from '@angular/forms';
 export class MiPrimerComponenteComponent {
   nombre: string = 'Felipe';
 
+  constructor(private servicio: MiPrimerServicioService) {
+
+  }
+
   cambiarNombre() {
     this.nombre = 'Antonio';
+    this.servicio.saludar();
   }
 }
