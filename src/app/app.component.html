@@ -15,6 +15,26 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <h1>Aquí va el contenido de la aplicación</h1>
+    <div class="botones">
+      <h1>Botones</h1>
+      <button mat-button color="primary">Botón básico</button>
+      <button mat-flat-button color="accent" disabled>Botón plano</button>
+      <button mat-raised-button color="warn">Botón elevado</button>
+      <button mat-stroked-button color="primary">Botón con borde</button>
+
+      <button mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button mat-fab>
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button mat-mini-fab>
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <a href="#" target="_blank" mat-flat-button color="accent">Link</a>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
