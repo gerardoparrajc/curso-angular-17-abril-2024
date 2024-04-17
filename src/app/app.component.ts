@@ -7,6 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { DialogoEjemploComponent } from './components/dialogo-ejemplo/dialogo-ejemplo.component';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +21,26 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'mi-primer-proyecto';
+
+  constructor(private dialog: MatDialog) {
+
+  }
+
+  openDialog() {
+    console.log('Abriendo diálogo...');
+
+    const dialogRef = this.dialog.open(DialogoEjemploComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`El usuario ha respondido ${result}`);
+    })
+  }
 }
