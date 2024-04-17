@@ -81,10 +81,10 @@
 
     <div class="menus">
       <h1>Menús</h1>
-      <button mat-button [matMenuTriggerFor]="menuPrincipal">Abrir menú</button>
+      <button mat-flat-button color="primary" [matMenuTriggerFor]="menuPrincipal">Abrir el maravilloso menú</button>
 
-      <mat-menu #menuPrincipal="matMenu">
-        <button mat-menu-item>Opción 1</button>
+      <mat-menu #menuPrincipal="matMenu" xPosition="before">
+        <button mat-menu-item><mat-icon>home</mat-icon> Opción 1</button>
         <button mat-menu-item>Opción 2</button>
         <button mat-menu-item>Opción 3</button>
         <button mat-menu-item>Opción 4</button>
