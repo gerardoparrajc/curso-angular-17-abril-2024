@@ -13,3 +13,15 @@
     margin: 1rem;
   }
 }
+
+.cards {
+  padding: 2rem;
+
+  .tarjetas {
+    display: flex;
+
+    mat-card {
+      margin: 1rem;
+    }
+  }
+}
