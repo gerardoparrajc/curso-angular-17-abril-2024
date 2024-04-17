@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { EjemploDragDropComponent } from './components/ejemplo-drag-drop/ejemplo-drag-drop.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { EjemploDragDropComponent } from './components/ejemplo-drag-drop/ejemplo
   standalone: true,
   imports: [
     RouterOutlet,
-    EjemploDragDropComponent
+    EjemploDragDropComponent,
+    MatButtonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
