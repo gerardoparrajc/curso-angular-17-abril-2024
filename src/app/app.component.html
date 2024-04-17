@@ -97,6 +97,20 @@
       <button mat-raised-button color="accent" (click)="openDialog()">Mostrar diálogo</button>
     </div>
 
+    <div class="form-fields">
+      <h1>Form fields</h1>
+      <mat-form-field>
+        <mat-label>Nombre:</mat-label>
+        <input matInput placeholder="Nombre">
+      </mat-form-field>
+
+      <mat-form-field color="accent">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-label>Apellidos:</mat-label>
+        <textarea matInput placeholder="Nombre"></textarea>
+        <mat-hint align="end">Máximo 50 caracteres</mat-hint>
+      </mat-form-field>
+    </div>
 
   </mat-sidenav-content>
 </mat-sidenav-container>

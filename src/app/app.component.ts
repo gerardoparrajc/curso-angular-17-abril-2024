@@ -9,6 +9,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogoEjemploComponent } from './components/dialogo-ejemplo/dialogo-ejemplo.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @Component({
   selector: 'app-root',
@@ -22,7 +25,9 @@ import { DialogoEjemploComponent } from './components/dialogo-ejemplo/dialogo-ej
     MatListModule,
     MatCardModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
