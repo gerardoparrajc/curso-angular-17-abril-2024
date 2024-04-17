@@ -1,3 +1,10 @@
+<mat-toolbar color="accent">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Nombre de la aplicación</span>
+</mat-toolbar>
+
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav >
     <mat-nav-list>
@@ -8,11 +15,6 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="accent">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Nombre de la aplicación</span>
-    </mat-toolbar>
+    <h1>Aquí va el contenido de la aplicación</h1>
   </mat-sidenav-content>
 </mat-sidenav-container>
