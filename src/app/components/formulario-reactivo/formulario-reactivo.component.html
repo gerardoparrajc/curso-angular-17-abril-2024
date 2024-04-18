@@ -14,5 +14,18 @@
     </p>
   </label>
 
+  <label>
+    Contraseña:
+    <input type="password" name="password" formControlName="password">
+    <p class="error" *ngIf="getPassword().errors && getPassword().dirty">El campo es requerido</p>
+  </label>
+
+  <label>
+    Repite contraseña:
+    <input type="password" name="repitePassword" formControlName="repitePassword">
+    <p class="error" *ngIf="getRepitePassword().errors && getRepitePassword().dirty">El campo es requerido</p>
+    <p class="error" *ngIf="formulario.errors?.['passwordsDistintos']">Las contraseñas no son iguales</p>
+  </label>
+
   <button type="submit" [disabled]="formulario.invalid">Enviar</button>
 </form>

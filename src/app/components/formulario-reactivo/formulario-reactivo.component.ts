@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { passwordsValidator } from '../../validators/passwordsValidator';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -16,7 +17,11 @@ export class FormularioReactivoComponent {
   constructor() {
     this.formulario = new FormGroup({
       nombre: new FormControl('', Validators.required),
-      correo: new FormControl('', [Validators.required, Validators.email, Validators.minLength(4)])
+      correo: new FormControl('', [Validators.required, Validators.email, Validators.minLength(4)]),
+      password: new FormControl('', Validators.required),
+      repitePassword: new FormControl('', Validators.required)
+    }, {
+      validators: passwordsValidator
     });
   }
 
@@ -24,5 +29,15 @@ export class FormularioReactivoComponent {
     console.log('Enviando formulario...');
     console.log(this.formulario);
   }
+
+  getPassword(): FormControl {
+    return this.formulario.get('password') as FormControl;
+  }
+
+  getRepitePassword(): FormControl {
+    return this.formulario.get('repitePassword') as FormControl;
+  }
+
+
 
 }
