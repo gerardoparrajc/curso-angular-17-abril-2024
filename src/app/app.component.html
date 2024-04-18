@@ -7,3 +7,42 @@
 
 <p [ngClass]="{'clase1':  3 > 6}">Este es un párrafo</p>
 <p [ngStyle]="{'background-color': colorFondo}">Otro párrafo</p>
+
+
+<p class="error" *ngIf="colorFondo === 'red'">El campo es requerido</p>
+<div *ngIf="colorFondo === 'red'; else noEsVerde">
+  <h1>Color fondo es rojo</h1>
+</div>
+
+
+
+<ng-template #noEsVerde>
+  <div>
+    <h1>Color fondo no es rojo</h1>
+  </div>
+</ng-template>
+
+<div class="ciudades">
+  <h2>Ciudades:</h2>
+  <ul>
+    <li *ngFor="let ciudad of ciudades; let i = index; let impar = even; let total = count; let primero = first;" [ngClass]="{'valorPar': impar}">{{ i + 1 }} de {{ total }}. {{ ciudad }}</li>
+  </ul>
+</div>
+
+
+
+<div class="ciudades">
+  <h2>Ciudades:</h2>
+  <ul>
+    <li *ngFor="let ciudad of ciudades;">
+      {{ ciudad }}
+      <div [ngSwitch]="ciudad">
+        <p *ngSwitchCase="'Almería'">(Andalucía)</p>
+        <p *ngSwitchCase="'Granada'">(Andalucía)</p>
+        <p *ngSwitchCase="'Madrid'">(Madrid)</p>
+        <p *ngSwitchCase="'Cartagena'">(Murcia)</p>
+        <p *ngSwitchDefault>(Otra comunidad)</p>
+      </div>
+    </li>
+  </ul>
+</div>

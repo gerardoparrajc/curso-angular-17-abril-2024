@@ -14,4 +14,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'mi-primer-proyecto';
   colorFondo = 'red';
+
+  ciudades = ['Almería', 'Granada', 'Madrid', 'Cartagena', 'Logroño'];
+
 }
