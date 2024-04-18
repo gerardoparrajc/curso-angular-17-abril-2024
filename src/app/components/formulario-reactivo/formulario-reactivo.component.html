@@ -7,7 +7,12 @@
   <label>
     Correo electrónico:
     <input type="email" name="correo" formControlName="correo">
+    <p class="error" *ngIf="formulario.get('correo')?.errors && formulario.get('correo')?.dirty">
+      <span *ngIf="formulario.get('correo')?.errors?.['required']">El campo es obligatorio</span>
+      <span *ngIf="formulario.get('correo')?.errors?.['email']">El correo electrónico no es válido</span>
+      <span *ngIf="formulario.get('correo')?.errors?.['minlength']">El correo debe tener más de 4 caracteres</span>
+    </p>
   </label>
 
-  <button type="submit">Enviar</button>
+  <button type="submit" [disabled]="formulario.invalid">Enviar</button>
 </form>
