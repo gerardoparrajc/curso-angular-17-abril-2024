@@ -1,0 +1,13 @@
+form {
+  padding: 2rem;
+
+  label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    color: red;
+    font-size: 75%;
+  }
+}

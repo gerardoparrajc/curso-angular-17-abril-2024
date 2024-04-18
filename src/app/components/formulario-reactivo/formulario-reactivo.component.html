@@ -1,0 +1,13 @@
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+  <label>
+    Nombre:
+    <input type="text" name="nombre" formControlName="nombre">
+    <p class="error" *ngIf="formulario.get('nombre')?.errors && formulario.get('nombre')?.dirty">El campo es requerido</p>
+  </label>
+  <label>
+    Correo electrónico:
+    <input type="email" name="correo" formControlName="correo">
+  </label>
+
+  <button type="submit">Enviar</button>
+</form>
