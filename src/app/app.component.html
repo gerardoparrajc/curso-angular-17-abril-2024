@@ -46,3 +46,38 @@
     </li>
   </ul>
 </div>
+
+
+<div class="productos">
+  <ul>
+    <li *ngFor="let producto of productos">
+      <span [ngClass]="{'stock-bajo': producto.stock < 15, 'stock-medio': producto.stock >= 15 && producto.stock < 25, 'stock-alto': producto.stock >= 25}">{{ producto.nombre }} - {{ producto.stock }}ud.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="productos">
+  <ul>
+    <li *ngFor="let producto of productos">
+      <span [ngStyle]="{'background-color': getNivelStock(producto.stock) }">{{ producto.nombre }} - {{ producto.stock }}ud.</span>
+    </li>
+  </ul>
+</div>
+
+@if (3 > 1) {
+  <p>3 es mayor que 1</p>
+} @else if (3 > 2){
+  <p>3 es menor que 1</p>
+}
+
+@for (producto of productos; track $index) {
+  <p>{{producto.nombre}}</p>
+}
+
+@for (ciudad of ciudades; track $index) {
+  {{ ciudad }}
+  @switch (ciudad) {
+    @case ('Almería') { (Andalucía) }
+    @default {}
+  }
+}

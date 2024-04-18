@@ -24,6 +24,22 @@ export class AppComponent {
     { nombre: 'Yogurt', stock: 63},
     { nombre: 'Huevos', stock: 13},
     { nombre: 'Carne', stock: 76},
-  ]
+  ];
+
+  nivelStock: string = '';
+
+  getNivelStock(stock: number): string {
+    if (stock < 15)
+      return 'red';
+
+    if (stock >= 15 && stock < 25)
+      return 'yellow';
+
+    if (stock >= 25)
+      return 'green';
+
+    return '';
+  }
+
 
 }
