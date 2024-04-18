@@ -2,7 +2,8 @@
   <label>
     Nombre:
     <input type="text" name="nombre" formControlName="nombre">
-    <p class="error" *ngIf="formulario.get('nombre')?.errors && formulario.get('nombre')?.dirty">El campo es requerido</p>
+    <p class="error" *ngIf="formulario.get('nombre')?.errors?.['required'] && formulario.get('nombre')?.dirty">El campo es requerido</p>
+    <p class="error" *ngIf="formulario.get('nombre')?.errors?.['length'] && formulario.get('nombre')?.dirty">El nombre tiene que tener 6 caracteres</p>
   </label>
   <label>
     Correo electrónico:
@@ -17,7 +18,8 @@
   <label>
     Contraseña:
     <input type="password" name="password" formControlName="password">
-    <p class="error" *ngIf="getPassword().errors && getPassword().dirty">El campo es requerido</p>
+    <p class="error" *ngIf="getPassword().errors?.['required'] && getPassword().dirty">El campo es requerido</p>
+    <p class="error" *ngIf="getPassword().errors?.['length'] && getPassword().dirty">La contraseña tiene que tener 6 caracteres</p>
   </label>
 
   <label>
