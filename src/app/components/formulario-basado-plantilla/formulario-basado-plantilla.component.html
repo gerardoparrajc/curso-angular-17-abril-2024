@@ -1,0 +1,23 @@
+<form #formulario="ngForm">
+  <label>
+    Nombre:
+    <input type="text" name="Nombre" required [(ngModel)]="nombre">
+    <p class="error" *ngIf="formulario.controls['Nombre']?.invalid && formulario.controls['Nombre']?.dirty">Este campo es obligatorio</p>
+  </label>
+
+  <label>
+    Correo electrónico:
+    <input type="email" email required name="Correo" [(ngModel)]="correo">
+    <p class="error" *ngIf="formulario.controls['Correo']?.invalid && formulario.controls['Correo']?.dirty">
+      <span *ngIf="formulario.controls['Correo'].errors?.['required']">El campo es obligatorio</span>
+      <span *ngIf="formulario.controls['Correo'].errors?.['email']">Por favor, escribe un correo electrónico válido</span>
+    </p>
+  </label>
+
+  <button type="submit" [disabled]="formulario.invalid" (click)="enviarFormulario(formulario)">Enviar</button>
+</form>
+
+
+<h2>Datos introducidos:</h2>
+<p>Nombre: {{ nombre }}</p>
+<p>Correo electrónico: {{ correo }}</p>

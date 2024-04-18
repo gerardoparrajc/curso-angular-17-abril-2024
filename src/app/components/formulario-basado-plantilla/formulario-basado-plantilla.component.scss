@@ -1,0 +1,17 @@
+form {
+  padding: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.error {
+  color: red;
+  font-size: 75%;
+}
+
+input.ng-invalid.ng-dirty {
+  border: 1px solid red;
+}
