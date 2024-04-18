@@ -17,4 +17,13 @@ export class AppComponent {
 
   ciudades = ['Almería', 'Granada', 'Madrid', 'Cartagena', 'Logroño'];
 
+
+  productos = [
+    { nombre: 'Leche', stock: 23},
+    { nombre: 'Pan', stock: 4},
+    { nombre: 'Yogurt', stock: 63},
+    { nombre: 'Huevos', stock: 13},
+    { nombre: 'Carne', stock: 76},
+  ]
+
 }
