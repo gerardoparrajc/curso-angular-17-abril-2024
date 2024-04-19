@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, lastValueFrom } from 'rxjs';
 
@@ -8,6 +8,22 @@ import { from, lastValueFrom } from 'rxjs';
 export class MiServicioService {
 
   constructor(private http: HttpClient) {}
+
+  login() {
+    return this.http.post('https://dummyjson.com/auth/login', {
+      username: 'kminchelle',
+      password: '0lelplR'
+    });
+  }
+
+  getSecretRecipes(token: string) {
+    return this.http.get('https://dummyjson.com/auth/recipes', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+    });
+  }
 
   getTodos() {
     return this.http.get('https://dummyjson.com/todos');
@@ -19,7 +35,6 @@ export class MiServicioService {
       completed: completado,
       userId: idUsuario
     });
-
   }
 
   updateStatusTodo(id: number, completado: boolean) {
