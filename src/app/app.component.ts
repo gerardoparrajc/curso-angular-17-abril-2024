@@ -1,15 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Componente1Component } from './components/componente1/componente1.component';
-import { Componente2Component } from './components/componente2/componente2.component';
+import { MiServicioService } from './services/mi-servicio.service';
 
 @Component({
   selector: 'kit-raiz',
   standalone: true,
-  imports: [RouterOutlet, Componente1Component, Componente2Component],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Hola mundo';
+
+  constructor(private miServicio: MiServicioService) {}
+
+  ngOnInit(): void {
+
+      this.miServicio.getPromesa()
+      .then((result) => {
+        console.log('El resultado es menor que 5: ' + result);
+      })
+      .catch((error) => console.log(error))
+      .finally(() => console.log('Se ha terminado la ejecución'));
+
+      this.miServicio.getProducts()
+        .then((productos: any) => {
+          console.log(productos);
+        })
+        .catch((error) => alert('Se ha producido un error'))
+        .finally(() => console.log('Petición finalizada'));
+
+  }
+
 }

@@ -1,0 +1,31 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MiServicioService {
+
+  constructor(private http: HttpClient) { }
+
+  getPromesa() {
+    const miPromesa = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const randomNumber = Math.floor(Math.random() * 10);
+        if (randomNumber < 5) {
+          resolve(randomNumber);
+        } else {
+          reject('El numero es mayor que 5');
+        }
+      }, 2000);
+    });
+
+    return miPromesa;
+  }
+
+  getProducts() {
+    return firstValueFrom(this.http.get('https://dummyjson.cdom/products'));
+  }
+
+}
