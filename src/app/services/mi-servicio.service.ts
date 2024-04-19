@@ -16,16 +16,16 @@ export class MiServicioService {
         if (randomNumber < 5) {
           resolve(randomNumber);
         } else {
-          reject('El numero es mayor que 5');
+          reject('El numero es mayor que 5 ' + randomNumber);
         }
-      }, 2000);
+      }, 5000);
     });
 
     return miPromesa;
   }
 
   getProducts() {
-    return firstValueFrom(this.http.get('https://dummyjson.cdom/products'));
+    return firstValueFrom(this.http.get('https://dummyjson.com/products'));
   }
 
 }

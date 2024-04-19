@@ -14,21 +14,21 @@ export class AppComponent implements OnInit {
 
   constructor(private miServicio: MiServicioService) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
 
-      this.miServicio.getPromesa()
-      .then((result) => {
-        console.log('El resultado es menor que 5: ' + result);
-      })
-      .catch((error) => console.log(error))
-      .finally(() => console.log('Se ha terminado la ejecución'));
+    try {
+      const numero = await this.miServicio.getPromesa();
+      console.log('El número es menor que 5: ' + numero);
+    } catch (error) {
+      console.log(error);
+    }
 
-      this.miServicio.getProducts()
-        .then((productos: any) => {
-          console.log(productos);
-        })
-        .catch((error) => alert('Se ha producido un error'))
-        .finally(() => console.log('Petición finalizada'));
+    try {
+      const productos = await this.miServicio.getProducts();
+      console.log(productos);
+    } catch (error) {
+      alert('Se ha producido un error al obtener los prodcutos');
+    }
 
   }
 
