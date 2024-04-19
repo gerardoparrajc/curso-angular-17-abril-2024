@@ -28,6 +28,12 @@ export class AppComponent implements OnInit {
       complete: () => console.log('La petición de fotos se ha completado'),
     });
 
+    this.miServicio.getFoto().subscribe({
+      next: (fotos: any) => console.log(fotos),
+      error: (error: any) => console.log(error),
+      complete: () => console.log('La petición de foto se ha completado'),
+    });
+
     try {
       const numero = await this.miServicio.getPromesa();
       console.log('El número es menor que 5: ' + numero);

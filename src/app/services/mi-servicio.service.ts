@@ -45,4 +45,10 @@ export class MiServicioService {
     });
   }
 
+  getFoto() {
+    return this.http.get('https://placehold.co/600x400/png', {
+      responseType: 'arraybuffer',
+    });
+  }
+
 }
