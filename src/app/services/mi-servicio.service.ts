@@ -28,4 +28,8 @@ export class MiServicioService {
     return firstValueFrom(this.http.get('https://dummyjson.com/products'));
   }
 
+  getRecetas() {
+    return this.http.get('https://dummyjson.com/recipes');
+  }
+
 }

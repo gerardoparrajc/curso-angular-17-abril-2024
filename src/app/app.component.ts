@@ -16,6 +16,12 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
 
+    this.miServicio.getRecetas().subscribe({
+      next: (recetas: any) => console.log(recetas),
+      error: (error: any) => console.log(error),
+      complete: () => console.log('La petición de recetas se ha completado'),
+    });
+
     try {
       const numero = await this.miServicio.getPromesa();
       console.log('El número es menor que 5: ' + numero);
@@ -29,6 +35,8 @@ export class AppComponent implements OnInit {
     } catch (error) {
       alert('Se ha producido un error al obtener los prodcutos');
     }
+
+
 
   }
 
