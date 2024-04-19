@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,14 @@ export class MiServicioService {
   }
 
   getRecetas() {
-    return this.http.get('https://dummyjson.com/recipes');
+    return this.http
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .pipe(map((posts: any, indice) => {
+        for (const post of posts) {
+          post.title = post.title.toUpperCase();
+        }
+        return posts;
+      }));
   }
 
 }
