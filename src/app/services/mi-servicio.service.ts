@@ -39,4 +39,10 @@ export class MiServicioService {
       }));
   }
 
+  getFotos() {
+    return this.http.get('https://jsonplaceholder.typicode.com/photos', {
+      observe: 'response'
+    });
+  }
+
 }
