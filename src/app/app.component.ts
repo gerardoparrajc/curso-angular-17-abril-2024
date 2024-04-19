@@ -11,16 +11,27 @@ import { MiServicioService } from './services/mi-servicio.service';
 })
 export class AppComponent {
 
-  constructor() {
+  constructor(private miServicio: MiServicioService) {
 
-    // 1. Llamar al método getDirectUsers
+    this.miServicio.getTodos().subscribe({
+      next: (response: any) => console.log(response),
+      error: (error) => console.log(error),
+    });
 
+    this.miServicio.addTodo('Lavar el coche', false, 8).subscribe({
+      next: (response: any) => console.log(response),
+      error: (error) => console.log(error)
+    });
 
-    // 2. Llamar al método getUsersByPromise
+    this.miServicio.updateStatusTodo(82, true).subscribe({
+      next: (response: any) => console.log(response),
+      error: (error) => console.log(error),
+    });
 
-
-    // 3. Llamar al método getUsersByObservable
-
+    this.miServicio.deleteTodo(92).subscribe({
+      next: (response: any) => console.log(response),
+      error: (error) => console.log(error)
+    });
 
   }
 
