@@ -17,4 +17,5 @@ registerLocaleData(localeEs);
 })
 export class AppComponent {
   fecha: Date = new Date();
+  decimal: number = 822329.3928;
 }
