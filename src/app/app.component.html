@@ -11,5 +11,9 @@
 
 <h1>Pipe personalizado: {{ 8 | potenciaDosPipe }}</h1>
 
+<ul>
+  <li *ngFor="let receta of (recetas$ | async).recipes">{{ receta.name }}</li>
+</ul>
+
 <pre>JSON: {{ objeto | json }}</pre>
 
