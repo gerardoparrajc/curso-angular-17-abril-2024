@@ -4,9 +4,10 @@ import { IngredientesComponent } from './components/ingredientes/ingredientes.co
 import { RutaNoEncontradaComponent } from './components/ruta-no-encontrada/ruta-no-encontrada.component';
 import { RecetaComponent } from './components/receta/receta.component';
 import { miGuardGuard } from './guards/mi-guard.guard';
+import { miResolverResolver } from './resolvers/mi-resolver.resolver';
 
 export const routes: Routes = [
-  { path: 'recetas', component: RecetasComponent },
+  { path: 'recetas', component: RecetasComponent, resolve: { recetas: miResolverResolver} },
   { path: 'receta/:nombre', component: RecetaComponent, children: [
     { path: 'ingredientes', component: IngredientesComponent, canActivate: [miGuardGuard] }
   ]},
