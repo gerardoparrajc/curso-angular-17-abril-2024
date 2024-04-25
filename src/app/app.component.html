@@ -3,7 +3,7 @@
   <li>
     <a routerLink="/recetas" routerLinkActive="actual" >Recetas</a>
     <ul>
-      <li><a [routerLink]="['/receta', 'paella']">Paella</a>
+      <li><a [routerLink]="['/receta', 'paella']">Paella</a> - <a [routerLink]="['/receta', 'paella', 'ingredientes']">Ver ingredientes</a>
         <ul>
           <li><a [routerLink]="['/receta', 'paella']" [queryParams]="{tipo: 'valenciana', variedad: 'carne'}">Con carne</a></li>
           <li><a [routerLink]="['/receta', 'paella']" [queryParams]="{tipo: 'valenciana', variedad: 'marisco'}">Con marisco</a></li>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-ingredientes',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
   templateUrl: './ingredientes.component.html',
   styleUrl: './ingredientes.component.scss'
 })
-export class IngredientesComponent {
+export class IngredientesComponent implements OnInit {
+
+  receta: string = '';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+      this.route.parent?.params.subscribe(
+        (params: Params) => this.receta = params['nombre']
+      )
+  }
 
 }

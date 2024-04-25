@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-receta',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './receta.component.html',
   styleUrl: './receta.component.scss',
 })

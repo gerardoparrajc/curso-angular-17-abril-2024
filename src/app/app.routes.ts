@@ -6,8 +6,9 @@ import { RecetaComponent } from './components/receta/receta.component';
 
 export const routes: Routes = [
   { path: 'recetas', component: RecetasComponent },
-  { path: 'receta/:nombre', component: RecetaComponent },
-  { path: 'ingredientes', component: IngredientesComponent },
+  { path: 'receta/:nombre', component: RecetaComponent, children: [
+    { path: 'ingredientes', component: IngredientesComponent }
+  ]},
   { path: '', redirectTo: '/recetas', pathMatch: 'full' },
   { path: '**', component: RutaNoEncontradaComponent }
 ];
