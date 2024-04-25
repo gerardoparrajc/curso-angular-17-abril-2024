@@ -4,5 +4,8 @@
 <h1>Precios: {{ decimal | currency:'EUR':'symbol':'1.2-2' }}</h1>
 <h1>Texto: {{ texto | uppercase }}</h1>
 <h1>Texto: {{ texto | lowercase }}</h1>
+<h1>Porcentaje: {{ 0.7525 | percent:'1.2-2' }}</h1>
+
+
 <pre>JSON: {{ objeto | json }}</pre>
 
