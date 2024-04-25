@@ -1,3 +1,4 @@
 <h1>Fecha: {{ fecha | date: "EEEE, dd 'de' MMMM 'de' yyyy G"  }}</h1>
 <h1>Fecha: {{ fecha | date: "longDate"  }}</h1>
 <h1>Decimal: {{ decimal | number:'1.1-5' }}</h1>
+<h1>Precios: {{ decimal | currency:'EUR':'symbol':'1.2-2' }}</h1>
