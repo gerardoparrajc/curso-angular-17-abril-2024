@@ -11,11 +11,10 @@ registerLocaleData(localeEs);
   imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  providers: [
-    { provide: LOCALE_ID, useValue: 'es' }
-  ]
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
 })
 export class AppComponent {
   fecha: Date = new Date();
   decimal: number = 822329.3928;
+  texto: string = 'Lorem ipsum dolor sit amet consectetur';
 }
